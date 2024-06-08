@@ -1,0 +1,137 @@
+@import "class.css";
+
+:root {
+    --boxColor: rgba(0, 0, 0, 0.767);
+    --formTextColor: white;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: grey;
+
+    .containerBox {
+        width: 320px;
+        height: 560px;
+        background-color: rgba(255, 255, 255, 0.301);
+        display: flex;
+        padding: 20px;
+        transition: 1s ease-out;
+        transition-delay: 2s;
+
+        .login {
+            width: 280px;
+            height: 520px;
+            background-color: var(--boxColor);
+            color: var(--formTextColor);
+            padding: 20px;
+
+            h1 {
+                text-align: center;
+            }
+
+            .formSection {
+                height: 100px;
+                display: flex;
+                margin: 60px 0 60px 0;
+                border: 1px solid red;
+
+                img {
+                    width: 76px;
+                    height: 76px;
+                    border: 1px solid red;
+                }
+
+                div {
+                    width: 100%;
+                    display: flex;
+                    padding-left: 20px;
+                    justify-content: center;
+                    border: 1px solid red;
+
+                    label,
+                    input {
+                        height: 30px;
+                        text-align: center;
+                    }
+
+                    input {
+                        font-size: 12px;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid rgb(104, 104, 248);
+
+                        &::placeholder {
+                            color: rgb(198, 198, 198);
+                            position: relative;
+                            top: 10px;
+                        }
+                    }
+                }
+            }
+
+            .accept {
+                margin: 60px 10px 0 10px;
+
+                input {
+                    height: 14px;
+                    width: 14px;
+                    margin-right: 10px;
+                }
+
+                label {
+                    font-size: 12px;
+                    color: rgba(198, 198, 198, 0.711);
+
+                    span {
+                        color: rgb(243, 67, 67);
+                    }
+                }
+            }
+        }
+
+        .terminos {
+            width: 0;
+            height: 100%;
+            background-color: var(--boxColor);
+            transition: 1s ease-out;
+            transition-delay: 1s;
+
+            .legal {
+                resize: none;
+                width: 0;
+                height: 0;
+                padding: 0;
+                outline: 0;
+                opacity: 0;
+                transition: 1s ease-out;
+            }
+        }
+    }
+}
+
+body:has(.check:checked) {
+
+    .containerBox {
+        width: 1000px;
+        transition: 1s ease-out;
+
+        .terminos {
+            width: calc(100% - 340px);
+            height: 100%;
+            background-color: var(--boxColor);
+            margin-left: 20px;
+            opacity: 1;
+            transition: 1s ease-out;
+            transition-delay: 1s;
+
+            .legal {
+                width: calc(100% - 40px);
+                height: calc(100% - 40px);
+                opacity: 1;
+                transition: 1s ease-out;
+                transition-delay: 2s;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.boxCenterAll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxColumn {
+    display: flex;
+    flex-direction: column;  
+}
+
+.boxAlignCenter {
+    display: flex;
+    align-items:  center;
+}
