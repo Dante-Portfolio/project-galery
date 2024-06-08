@@ -1,0 +1,29 @@
+ 1 investigacion sites similares
+ 2 pruebas de codigo
+    2.1 validacion condiciones en login
+    2.2 envio de datos (localStorage)
+    2.3 lectura de datos (localStorage)
+    2.4 contraste de datos y redireccionamiento por condicion
+
+    ------- PROYECTO -------------
+
+3 crear documentos:
+    login
+    loginValidate
+    dashboard y 3 documentos del site
+
+4 doc login:
+    css basico
+    css comportamientos
+    js validacion de las condiciones y guardado de datos
+    js url loginValidate
+
+5 doc loginValidate:
+    js lectura de datos
+    js validacion de datos de login
+    js redireccionar segun resultado
+
+6 doc dashboard:
+    maquetacion segun diseño
+    crear componentes
+    vincular site
