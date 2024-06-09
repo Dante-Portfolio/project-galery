@@ -3,30 +3,42 @@
 :root {
     --boxColor: rgba(0, 0, 0, 0.767);
     --formTextColor: white;
+    --transitionTime: 1.2s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     width: 100vw;
     height: 100vh;
-    background-color: grey;
+    background-image: url(../resources/images/login-background-body.jpg);
+    background-size: cover;
 
     .containerBox {
-        width: 320px;
+        width: 360px;
         height: 560px;
-        background-color: rgba(255, 255, 255, 0.301);
+        background-color: rgba(255, 255, 255, 0.172);
+        backdrop-filter: blur(6px);
         display: flex;
         padding: 20px;
-        transition: 1s ease-out;
-        transition-delay: 2s;
+        border-radius: 10px;
+        transition: var(--transitionTime) ease-out;
+        transition-delay: calc(var(--transitionTime) * 3);
 
         .login {
-            width: 280px;
+            width: 320px;
             height: 520px;
             background-color: var(--boxColor);
             color: var(--formTextColor);
             padding: 20px;
+            border-radius: 10px;
 
             h1 {
+                font-size: 40px;
                 text-align: center;
             }
 
@@ -34,20 +46,17 @@ body {
                 height: 100px;
                 display: flex;
                 margin: 60px 0 60px 0;
-                border: 1px solid red;
 
                 img {
-                    width: 76px;
-                    height: 76px;
-                    border: 1px solid red;
+                    width: 70px;
+                    height: 70px;
                 }
 
                 div {
                     width: 100%;
                     display: flex;
-                    padding-left: 20px;
+                    padding-left: 10px;
                     justify-content: center;
-                    border: 1px solid red;
 
                     label,
                     input {
@@ -59,12 +68,17 @@ body {
                         font-size: 12px;
                         background-color: transparent;
                         border: none;
-                        border-bottom: 1px solid rgb(104, 104, 248);
+                        color: rgb(80, 176, 255);
+                        border-bottom: 1px solid rgba(198, 198, 198, 0.711);
 
                         &::placeholder {
                             color: rgb(198, 198, 198);
                             position: relative;
                             top: 10px;
+                        }
+
+                        &:focus {
+                            outline: none;
                         }
                     }
                 }
@@ -73,10 +87,22 @@ body {
             .accept {
                 margin: 60px 10px 0 10px;
 
-                input {
-                    height: 14px;
-                    width: 14px;
-                    margin-right: 10px;
+                .acceptCheck {
+                    appearance: none;
+                    height: 16px;
+                    width: 16px;
+                    border: 1px solid rgb(243, 67, 67);
+                    margin-right: 6px;
+                    position: relative;
+                    top: 2px;
+                    cursor: pointer;
+                    transition: .5s ease-out;
+
+                    &:checked {
+                        background-color: rgb(67, 126, 243);
+                        border: 0;
+                        transition: .5s ease-out;
+                    }
                 }
 
                 label {
@@ -85,6 +111,15 @@ body {
 
                     span {
                         color: rgb(243, 67, 67);
+                        position: relative;
+
+                        .check {
+                            appearance: none;
+                            width: 70px;
+                            height: 24px;
+                            position: absolute;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -94,17 +129,30 @@ body {
             width: 0;
             height: 100%;
             background-color: var(--boxColor);
-            transition: 1s ease-out;
-            transition-delay: 1s;
+            border-radius: 10px;
+            transition: var(--transitionTime) ease-out;
+            transition-delay: calc(var(--transitionTime) * 2);
 
             .legal {
-                resize: none;
                 width: 0;
                 height: 0;
-                padding: 0;
-                outline: 0;
                 opacity: 0;
-                transition: 1s ease-out;
+                overflow: scroll;
+                scrollbar-width: none;
+                border: 1px solid grey;
+                border-radius: 10px;
+                transition: var(--transitionTime) ease-out;
+                transition-delay: calc(var(--transitionTime) * 1);
+
+                p {
+                    position: relative;
+                    top: 100%;
+                    padding: 20px;
+                    font-size: 12px;
+                    color: rgb(131, 131, 131);
+                    transition: var(--transitionTime) ease-out;
+                    transition-delay: calc(var(--transitionTime) * 0);
+                }
             }
         }
     }
@@ -114,23 +162,33 @@ body:has(.check:checked) {
 
     .containerBox {
         width: 1000px;
-        transition: 1s ease-out;
+        transition: var(--transitionTime) ease-out;
+        transition-delay: calc(var(--transitionTime) * 0);
+        background-color: rgba(0, 0, 0, 0.144);
 
         .terminos {
-            width: calc(100% - 340px);
+            width: calc(100% - 320px);
             height: 100%;
             background-color: var(--boxColor);
             margin-left: 20px;
             opacity: 1;
-            transition: 1s ease-out;
-            transition-delay: 1s;
+            transition: var(--transitionTime) ease-out;
+            transition-delay: calc(var(--transitionTime) * 1);
 
             .legal {
                 width: calc(100% - 40px);
                 height: calc(100% - 40px);
                 opacity: 1;
-                transition: 1s ease-out;
-                transition-delay: 2s;
+                border: 1px solid rgb(243, 67, 67);
+                transition: var(--transitionTime) ease-out;
+                transition-delay: calc(var(--transitionTime) * 2);
+
+                p {
+                    top: 0;
+                    transition: var(--transitionTime) ease-out;
+                    transition-delay: calc(var(--transitionTime) * 3);
+
+                }
             }
         }
     }
