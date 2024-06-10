@@ -6,40 +6,52 @@
 // 4 configurar usuario y contraseña
 //      4.1 si todo corecto boton redirige a login validation
 
-const user = document.getElementById('user').value
-const pass = document.getElementById('pass').value
-const checkbox = document.getElementById('checkbox').checked
+const user = document.getElementById('user')
+const pass = document.getElementById('pass')
+let checkbox = document.getElementById('checkbox')
+const send = document.getElementById('send')
 
 let userEmpty
 let passEmpty
 let validateCheck
-let validateWrited = true
-let validateText = true
-let validateForm = true
+let validateWrited
+let validateText
+let validateForm
 
 function testForm() {
-    if (user == '') { userEmpty = true } else { userEmpty = false }
-    if (pass == '') { passEmpty = true } else { passEmpty = false }
+    let userValue = user.value
+    let passValue = pass.value
+    let checkboxValue = checkbox.checked
+
+    if (userValue == '') { userEmpty = true } else { userEmpty = false }
+    if (passValue == '') { passEmpty = true } else { passEmpty = false }
 
     if (userEmpty == true || passEmpty == true) {
         validateWrited = false
-    }
-
-    if (user.split(' ').length !== 1 || pass.split(' ').length !== 1) {
-        validateText = false
-    }
-
-    if (checkbox !== true) {
-        validateCheck = false
-    }
-
-    if ( validateWrited == false || validateText == false || validateCheck == false) {
-        validateForm = false
     } else {
-        validateForm = true
+        validateWrited = true 
     }
+    console.log(validateWrited)
 
-    console.log(validateForm + ' validateForm')
+    if (userValue.split(' ').length !== 1 || passValue.split(' ').length !== 1) {
+        validateText = false
+    } else {
+        validateText = true 
+    }
+    console.log(validateText)
+
+    if (checkboxValue !== true) {
+        validateCheck = false
+    } else {
+        validateCheck = true
+    }
+    console.log(validateCheck)
+
+    if (validateWrited == true && validateText == true && validateCheck == true) {
+        validateForm = true
+    } else {
+        validateForm = false
+    }
 }
 
-testForm()
+send.addEventListener('click', testForm)
