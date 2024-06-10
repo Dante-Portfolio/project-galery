@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Galery</title>
+    <link rel="shortcut icon" href="resources/icons/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/login.css">
 </head>
 
@@ -15,20 +16,20 @@
             <div class="formSection boxAlignCenter">
                 <img src="resources/icons/perfil-del-usuario.png" alt="icono usuario">
                 <div class="boxColumn">
-                    <label for="">Nombre de usuario</label>
-                    <input type="text" placeholder="Escribe tu nombre de usuario">
+                    <label for="user">Nombre de usuario</label>
+                    <input id="user" type="text" placeholder="Escribe tu nombre de usuario">
                 </div>
             </div>
             <div class="formSection boxAlignCenter">
                 <img src="resources/icons/password.png" alt="icono contraseña">
                 <div class="boxColumn">
-                    <label for="">Contraseña</label>
-                    <input type="text" placeholder="Escribe aquí tu contraseña">
+                    <label for="pass">Contraseña</label>
+                    <input id="pass" type="text" placeholder="Escribe aquí tu contraseña">
                 </div>
             </div>
             <div class="accept">
-                <input class="acceptCheck" type="checkbox">
-                <label>Marcando esta casilla de confirmación, acepto las
+                <input id="checkbox" class="acceptCheck" type="checkbox">
+                <label for="checkbox">Marcando esta casilla de confirmación, acepto las
                     <span class="revisar">
                         <input class="check" type="checkbox">
                         condiciones</span> de uso y privacidad.</label>
@@ -77,6 +78,9 @@
             </div>
         </div>
     </div>
+
+    <script src="js/login/loginMain.js"></script>
+
 </body>
 
 </html>
