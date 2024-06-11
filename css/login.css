@@ -69,7 +69,7 @@ body {
                         background-color: transparent;
                         border: none;
                         color: rgb(80, 176, 255);
-                        border-bottom: 1px solid rgba(198, 198, 198, 0.711);
+                        border-bottom: 1px solid rgba(75, 75, 75, 0.711);
 
                         &::placeholder {
                             color: rgb(198, 198, 198);

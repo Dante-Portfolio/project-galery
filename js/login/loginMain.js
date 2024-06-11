@@ -6,6 +6,8 @@
 // 4 configurar usuario y contraseña
 //      4.1 si todo corecto boton redirige a login validation
 
+import * as storage from './modules/storage.js'
+
 const user = document.getElementById('user')
 const pass = document.getElementById('pass')
 let checkbox = document.getElementById('checkbox')
@@ -28,30 +30,25 @@ function testForm() {
 
     if (userEmpty == true || passEmpty == true) {
         validateWrited = false
-    } else {
-        validateWrited = true 
-    }
-    console.log(validateWrited)
+    } else { validateWrited = true }
+    // console.log(validateWrited)
 
     if (userValue.split(' ').length !== 1 || passValue.split(' ').length !== 1) {
         validateText = false
-    } else {
-        validateText = true 
-    }
-    console.log(validateText)
+        alert('Los campos no deben contener espacios')
+    } else { validateText = true }
+    // console.log(validateText)
 
     if (checkboxValue !== true) {
         validateCheck = false
-    } else {
-        validateCheck = true
-    }
-    console.log(validateCheck)
+    } else { validateCheck = true }
+    // console.log(validateCheck)
 
     if (validateWrited == true && validateText == true && validateCheck == true) {
-        validateForm = true
-    } else {
-        validateForm = false
-    }
+        console.log('El formulario ha sido validado')
+        storage.saveData()
+
+    } else { validateForm = false }
 }
 
 send.addEventListener('click', testForm)
