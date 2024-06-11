@@ -48,6 +48,8 @@ function testForm() {
         console.log('El formulario ha sido validado')
         storage.saveData()
 
+        window.location.href = '../html/loginValidate.html'
+
     } else { validateForm = false }
 }
 
