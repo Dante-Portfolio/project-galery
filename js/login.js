@@ -10,47 +10,24 @@ import * as storage from './modules/storage.js'
 
 const user = document.getElementById('user')
 const pass = document.getElementById('pass')
-let checkbox = document.getElementById('checkbox')
 const send = document.getElementById('send')
 
-let userEmpty
-let passEmpty
-let validateCheck
-let validateWrited
+storage.loadUser()
+storage.loadPass
+
 let validateText
-let validateForm
 
 function testForm() {
     let userValue = user.value
     let passValue = pass.value
-    let checkboxValue = checkbox.checked
-
-    if (userValue == '') { userEmpty = true } else { userEmpty = false }
-    if (passValue == '') { passEmpty = true } else { passEmpty = false }
-
-    if (userEmpty == true || passEmpty == true) {
-        validateWrited = false
-    } else { validateWrited = true }
-    // console.log(validateWrited)
 
     if (userValue.split(' ').length !== 1 || passValue.split(' ').length !== 1) {
         validateText = false
         alert('Los campos no deben contener espacios')
-    } else { validateText = true }
-    // console.log(validateText)
-
-    if (checkboxValue !== true) {
-        validateCheck = false
-    } else { validateCheck = true }
-    // console.log(validateCheck)
-
-    if (validateWrited == true && validateText == true && validateCheck == true) {
-        console.log('El formulario ha sido validado')
+    } else { 
         storage.saveData()
-
-        window.location.href = '../html/loginValidate.html'
-
-    } else { validateForm = false }
+        window.location.href = '../html/auth.html'
+    }
 }
 
 send.addEventListener('click', testForm)

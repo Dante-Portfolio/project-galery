@@ -11,24 +11,24 @@
 
 <body class="boxCenterAll">
     <div class="containerBox boxCenterAll">
-        <form class="login" action="./html/loginValidate.html" method="get">
+        <form class="login" action="./html/auth.html" method="get">
             <h1>Login</h1>
             <div class="formSection boxAlignCenter">
                 <img src="resources/icons/perfil-del-usuario.png" alt="icono usuario">
                 <div class="boxColumn">
                     <label for="user">Nombre de usuario</label>
-                    <input id="user" type="text" name='user' placeholder="Escribe tu nombre de usuario">
+                    <input id="user" type="text" name='user' placeholder="Escribe tu nombre de usuario" required>
                 </div>
             </div>
             <div class="formSection boxAlignCenter">
                 <img src="resources/icons/password.png" alt="icono contraseña">
                 <div class="boxColumn">
-                    <label for="pass">Contraseña</label>
+                    <label for="pass" required>Contraseña</label>
                     <input id="pass" type="text" name='pass' placeholder="Escribe aquí tu contraseña">
                 </div>
             </div>
             <div class="accept">
-                <input id="checkbox" class="acceptCheck" type="checkbox">
+                <input id="checkbox" class="acceptCheck" type="checkbox" required>
                 <label for="checkbox">Marcando esta casilla de confirmación, acepto las
                     <span class="revisar">
                         <input class="check" type="checkbox">
@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    <script src="js/login/loginMain.js" type="module"></script>
+    <script src="js/login.js" type="module"></script>
 
 </body>
 
