@@ -10,6 +10,7 @@ import * as storage from './modules/storage.js'
 
 const user = document.getElementById('user')
 const pass = document.getElementById('pass')
+const conditions = document.getElementById('conditions')
 const send = document.getElementById('send')
 
 storage.loadUser()
@@ -24,10 +25,19 @@ function testForm() {
     if (userValue.split(' ').length !== 1 || passValue.split(' ').length !== 1) {
         validateText = false
         alert('Los campos no deben contener espacios')
-    } else { 
+    } else {
         storage.saveData()
         window.location.href = '../html/auth.html'
     }
 }
 
+function changeConditions() {
+    if (send.disabled) {
+        send.removeAttribute('disabled')
+    } else {
+        send.disabled = true
+    }
+}
+
+conditions.onclick = changeConditions
 send.addEventListener('click', testForm)

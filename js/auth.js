@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-
+console.log(urlParams)
 const user = urlParams.get("user");
 const pass = urlParams.get("pass");
 

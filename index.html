@@ -10,10 +10,10 @@
 </head>
 
 <body class="boxCenterAll">
-    <div class="containerBox boxCenterAll">
+    <div class="containerBox">
         <form class="login" action="./html/auth.html" method="get">
             <h1>Login</h1>
-            <div class="formSection boxAlignCenter">
+            <div class="formSection">
                 <img src="resources/icons/perfil-del-usuario.png" alt="icono usuario">
                 <div class="boxColumn">
                     <label for="user">Nombre de usuario</label>
@@ -28,17 +28,18 @@
                 </div>
             </div>
             <div class="accept">
-                <input id="checkbox" class="acceptCheck" type="checkbox" required>
+                <input id="conditions" class="acceptCheck" type="checkbox">
                 <label for="checkbox">Marcando esta casilla de confirmación, acepto las
                     <span class="revisar">
-                        <input class="check" type="checkbox">
+                        <input id='openConditions' class="check" type="checkbox">
                         condiciones</span> de uso y privacidad.</label>
             </div>
-            <input id="send" type="submit" value="Enviar"></input>
+            <input id="send" type="submit" value="Enviar" disabled></input>
         </form>
         <div class="terminos boxCenterAll">
             <div class="legal">
-                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quo incidunt exercitationem odit!
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quo incidunt exercitationem
+                    odit!
                     Quam, ullam, deleniti aliquid ratione nihil nobis beatae dolores nam corporis voluptatum debitis
                     voluptate quaerat doloribus similique. Illo sequi voluptatibus hic natus. Eius exercitationem
                     dolorum, quam vel illum dolorem labore necessitatibus nisi sequi deleniti accusamus nihil facilis
@@ -74,7 +75,7 @@
                     eos quidem. Atque deserunt ducimus quam officia rem laboriosam quaerat delectus consequuntur quae
                     quibusdam odit tempora voluptas incidunt iure laudantium officiis, quidem earum ipsam. Quibusdam
                     ratione consectetur dicta quam velit, amet exercitationem?
-                </p>
+                </p> 
             </div>
         </div>
     </div>
