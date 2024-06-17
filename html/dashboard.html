@@ -13,15 +13,45 @@
     <header>
         <div>
             <img src="../resources/icons/favicon.png" alt="logo site">
-            <h1>Project Gallery</h1>
         </div>
-
+        <h1>Project Gallery</h1>
     </header>
 
     <main>
         <nav>
             <form action="">
-                <input id="filesUpload" type="file" multiple>
+                <fieldset>
+                    <div class="filters">
+                        <input type="radio" name="select" id="allImages" checked="checked">
+                        <label for="allImages">
+                            <div>All images</div>
+                        </label>
+                    </div>
+
+                    <legend>Filtra por:</legend>
+                    <div class="filters">
+                        <input type="radio" name="select" id="mountains">
+                        <label for="mountains">
+                            <div>Mountains</div>
+                        </label>
+                    </div>
+
+                    <div class="filters">
+                        <input type="radio" name="select" id="bridges">
+                        <label for="bridges">
+                            <div>Bridges</div>
+                        </label>
+                    </div>
+
+                    <div class="filters">
+                        <input type="radio" name="select" id="cities">
+                        <label for="cities">
+                            <div>Cities</div>
+                        </label>
+                    </div>
+
+                    <!-- <input id="filesUpload" type="file" multiple> -->
+                </fieldset>
             </form>
         </nav>
 

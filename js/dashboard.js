@@ -1,6 +1,7 @@
 const authParams = new URLSearchParams(window.location.search);
 const containerApp = document.getElementById('containerApp')
 const containerBoxes = document.getElementsByClassName('containerBoxes')
+const radioChecked = document.getElementsByTagName('input:checked')
 
 const pics = document.getElementsByClassName('img')
 
@@ -8,6 +9,8 @@ if (!authParams.get('auth')) {
     alert('Logueate Primero')
     window.location.href = '../index.html'
 }
+console.log(radioChecked)
+// json = {()}
 
 // reconocer contenedorApp
 // contar imagenes cargadas
@@ -65,7 +68,7 @@ function insertboxes() {
 // RECOGER LOS ARCHIVOS SUBIDOS Y GUARDAR DATOS EN JSON
 
 function createJson() {
-    const list = filesUpload.files
+    // const list = filesUpload.files
 
     for (let i = 0; i < Object.keys(list).length; i++) {
         let id = i
@@ -80,6 +83,7 @@ function createJson() {
     }
     const json = JSON.stringify(filesData)
     localStorage.setItem('uploadFiles', json)
+    console.log(json)
 
 } // ...........................................................
 
