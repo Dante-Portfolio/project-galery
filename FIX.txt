@@ -1,0 +1,13 @@
+dashboard 
+    Filtro 'all images' queda siempre checked
+    probablemete js lo deja activado por defecto
+
+    portrait menu no oculta al seleccionar 
+    añadir disparador al mismo grupo
+
+login
+    politica de seguridad impide hacer login desde github
+    height de panel en media querie no es correcto
+
+condiciones
+    style
